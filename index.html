@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		canvas{
+			display: block;
+		}
+	</style>
+	<title>Bird_Fly</title>
+</head>
+<body>
+	
+	<canvas id="canvas" ></canvas>
+	
+	
+	<script src="./js/Game.js" ></script>
+	<script src="./js/Background.js" ></script>
+	<script src="./js/Land.js" ></script>
+	<script src="./js/Pipe.js" ></script>
+	<script src="./js/Bird.js" ></script>
+	<script src="./js/SceneManage.js" ></script>
+	
+	<script>
+		
+		var game = new Game({
+			'id':'canvas',
+			'url':'R.json'
+		})
+		
+	</script>
+	
+	
+</body>
+</html>
