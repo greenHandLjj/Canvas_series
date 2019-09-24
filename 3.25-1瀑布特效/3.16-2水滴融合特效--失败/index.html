@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <canvas id="c"></canvas>
+
+    <script src="index.js" type="text/javascript"></script>
+
+    <script type="text/javascript1">
+        var c = document.getElementById('c'),
+            w = c.width = window.innerWidth,
+            h = c.height = window.innerHeight,
+            ctx = c.getContext('2d');
+
+        var balls = [];
+        var num = 70;
+
+        var textures = [];
+        var groups = [50, 50, 50];
+        var group_colours = ['rgba(97,160,232'];
+        var radius = 30;
+
+        function Ball() {
+            
+        }
+
+        Ball.prototype = {
+            init: function () {
+
+                for (var i = 0; i < groups.length; i++) {
+                    var colour;
+
+                    if (group_colours[i]) {
+                        colour = GROUP_COLOURS[i];
+                    } else {
+                        colour = 'rgba(' + Math.round(Math.random() * 360) + ',255,255,1)';
+                    }
+
+                    textures[i] = document.createElement("canvas");
+                    textures[i].width = radius * 2;
+                    textures[i].height = radius * 2;
+                    var nctx = textures[i].getContext("2d");
+
+                    var grad = nctx.createRadialGradient(
+                        radius,
+                        radius,
+                        1,
+                        radius,
+                        radius,
+                        radius
+                    );
+
+                    grad.addColorStop(0, colour + ',1)');
+                    grad.addColorStop(1, colour + ',0)');
+                    nctx.fillStyle = grad;
+                    nctx.arc(radius, radius, radius, 0, Math.PI * 2, true);
+                    nctx.fill();
+
+                }
+
+            },
+            render: function () {
+
+            }
+        }
+
+        // for(var i = 0; i < num; i ++){
+        //     balls.push(new Ball());
+        //     balls[i].render();
+        // }
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

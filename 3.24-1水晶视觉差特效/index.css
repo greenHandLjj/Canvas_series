@@ -1,0 +1,11 @@
+body{
+    margin:0;
+}
+body,html{
+    height:100%;
+}
+canvas{
+    cursor: move;
+    display:block;
+    background:radial-gradient(ellipse at center, hsla(230,50%,50%,.8) 0%,rgba(0,0,0,1) 100%);
+}
